@@ -1,1 +1,32 @@
-/* add styles here */
+/* Скидання стандартних стилів браузера */
+body,
+div,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+/* Загальний стиль блоку зірок */
+.stars {
+  display: flex;
+  margin-bottom: 10px; /* Відступ між блоками */
+}
+
+/* Стиль для кожної зірки */
+.stars__star {
+  width: 16px; /* Розмір зірки */
+  height: 16px; /* Висота зірки */
+  margin-right: 4px; /* Відстань між зірками */
+  background-image: url('./images/star.svg'); /* Зображення порожньої зірки */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Активні зірки для модифікатора --N */
+.stars--1 .stars__star:nth-child(1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url('./images/star-active.svg'); /* Зображення активної зірки */
+}
